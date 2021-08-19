@@ -50,6 +50,9 @@ QString CelestialSpherePrinter::getCreditText()
 * 設計 : 高橋徹
 * プログラム作成 : 高橋昌土 (ilce.ma@gmail.com)
 
+## 鏡像天球儀について
+https://tohru-t.github.io/uragaeshi-tenkyugi/
+
 # 使用データについて
 鏡像天球儀は「Astro Commons」さんから取得させていただいたデータを使用して作図しています。
 
