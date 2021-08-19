@@ -89,6 +89,8 @@ void Widget::startPrinting()
     cp.raRepeatCount = ui->raCountSpinBox->value();
     cp.deRepeatCount = ui->deCountSpinBox->value();
     cp.printStarNames = ui->printNamesCheckBox->isChecked();
+    cp.printConsteName = ui->printConsteNameCheckBox->isChecked();
+    cp.printMessierName = ui->printMessierNameCheckBox->isChecked();
     cp.maxMagnitude = ui->minMagSpinBox->value();
     cp.obsLatitude = ui->latSpinBox->value();
     cp.printConstellations = ui->printConsteCheckBox->isChecked();
@@ -96,6 +98,8 @@ void Widget::startPrinting()
     cp.printObsPointLine = ui->printObsLocCheckBox->isChecked();
     cp.printNameUnderLine = ui->printNameUnderLineCheckBox->isChecked();
     cp.printCreditText = ui->printCreditCheckBox->isChecked();
+    cp.printCoordinateText = ui->printCoordInfoCheckBox->isChecked();
+    cp.printSegmentInfoText = ui->printSegInfoCheckBox->isChecked();
     cp.useAlphabetText = ui->useAlphabetTextCheckBox->isChecked();
     cp.starNamePoint = ui->starNameSizeSpinBox->value();
     cp.messierNamePoint = ui->messierNameSizeSpinBox->value();

@@ -14,53 +14,53 @@
         <translation>upr</translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="320"/>
+        <location filename="celestialsphereprinter.cpp" line="328"/>
         <source>Zenith at %1°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="322"/>
+        <location filename="celestialsphereprinter.cpp" line="330"/>
         <source>緯度 %1°の天頂</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="504"/>
+        <location filename="celestialsphereprinter.cpp" line="514"/>
         <source>%1h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="508"/>
+        <location filename="celestialsphereprinter.cpp" line="518"/>
         <source>%1/20 %2h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="510"/>
+        <location filename="celestialsphereprinter.cpp" line="520"/>
         <source>%1/20 %2時</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="575"/>
+        <location filename="celestialsphereprinter.cpp" line="587"/>
         <source>RA %1° to %2°, Dec %3° to %4°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="577"/>
+        <location filename="celestialsphereprinter.cpp" line="589"/>
         <source>赤経 %1° から %2°, 赤緯 %3° から %4°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="817"/>
-        <location filename="celestialsphereprinter.cpp" line="819"/>
+        <location filename="celestialsphereprinter.cpp" line="830"/>
+        <location filename="celestialsphereprinter.cpp" line="832"/>
         <source>0h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="826"/>
+        <location filename="celestialsphereprinter.cpp" line="841"/>
         <source>Dec %1° to %2°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="828"/>
+        <location filename="celestialsphereprinter.cpp" line="843"/>
         <source>赤緯 %1° から %2°</source>
         <translation></translation>
     </message>
@@ -216,172 +216,193 @@
     </message>
     <message>
         <location filename="widget.ui" line="420"/>
-        <source>Print Names</source>
-        <translation>名前を出力</translation>
+        <source>Print star name</source>
+        <oldsource>Print Names</oldsource>
+        <translation>星名を出力</translation>
     </message>
     <message>
         <location filename="widget.ui" line="430"/>
+        <source>Print conste name</source>
+        <translation>星座名を出力</translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="440"/>
+        <source>Print messier name</source>
+        <translation>メシエ天体名を出力</translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="450"/>
         <source>Print constellations</source>
         <translation>星座線を出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="440"/>
+        <location filename="widget.ui" line="460"/>
         <source>Print messiers</source>
         <translation>メシエ天体を出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="450"/>
+        <location filename="widget.ui" line="470"/>
         <source>Print observation location</source>
         <translation>観測場所情報を出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="460"/>
+        <location filename="widget.ui" line="480"/>
         <source>Print credit text</source>
         <translation>クレジット表記を出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="470"/>
+        <location filename="widget.ui" line="490"/>
         <source>Print name underline</source>
         <translation>星名指示線を出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="480"/>
+        <location filename="widget.ui" line="500"/>
+        <source>Print coordinate info</source>
+        <translation>座標情報を出力</translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="510"/>
+        <source>Print segment info</source>
+        <translation>区分情報を出力</translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="520"/>
         <source>Use alphabet text</source>
         <translation>アルファベットで出力</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="490"/>
+        <location filename="widget.ui" line="547"/>
         <source>Drawing 2</source>
         <translation>描画２</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="496"/>
+        <location filename="widget.ui" line="553"/>
         <source>Star name size</source>
         <translation>星名のサイズ</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="513"/>
+        <location filename="widget.ui" line="570"/>
         <source>Messier name size</source>
         <translation>メシエ天体名のサイズ</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="530"/>
+        <location filename="widget.ui" line="587"/>
         <source>Conste name size</source>
         <translation>星座名のサイズ</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="547"/>
+        <location filename="widget.ui" line="604"/>
         <source>Info text size</source>
         <translation>情報文字列のサイズ</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="564"/>
+        <location filename="widget.ui" line="621"/>
         <source>Grid line width</source>
         <translation>グリッド線の幅</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="581"/>
+        <location filename="widget.ui" line="638"/>
         <source>Conste line width</source>
         <translation>星座線の幅</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="598"/>
+        <location filename="widget.ui" line="655"/>
         <source>Messier line width</source>
         <translation>メシエ天体の線の幅</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="615"/>
+        <location filename="widget.ui" line="672"/>
         <source>Messier radius</source>
         <translation>メシエ天体の半径</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="632"/>
+        <location filename="widget.ui" line="689"/>
         <source>Obs location line width</source>
         <translation>観測場所線の幅</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="669"/>
+        <location filename="widget.ui" line="709"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="675"/>
+        <location filename="widget.ui" line="715"/>
         <source>Frame color</source>
         <translation>枠の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="696"/>
+        <location filename="widget.ui" line="736"/>
         <source>Grid color</source>
         <translation>グリッドの色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="717"/>
+        <location filename="widget.ui" line="757"/>
         <source>Background color</source>
         <translation>背景の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="738"/>
+        <location filename="widget.ui" line="778"/>
         <source>Star color</source>
         <translation>星の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="759"/>
+        <location filename="widget.ui" line="799"/>
         <source>Star name color</source>
         <translation>星名の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="780"/>
+        <location filename="widget.ui" line="820"/>
         <source>Under line color</source>
         <translation>星名指示線の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="801"/>
+        <location filename="widget.ui" line="841"/>
         <source>Conste color</source>
         <translation>星座の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="822"/>
+        <location filename="widget.ui" line="862"/>
         <source>Messier color</source>
         <translation>メシエ天体の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="843"/>
+        <location filename="widget.ui" line="883"/>
         <source>Obs location color</source>
         <translation>観測場所情報の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="864"/>
+        <location filename="widget.ui" line="904"/>
         <source>Info text color</source>
         <translation>情報文字列の色</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="888"/>
+        <location filename="widget.ui" line="928"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="894"/>
+        <location filename="widget.ui" line="934"/>
         <source>Use date filename</source>
         <translation>ファイル名に日付を含める</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="926"/>
+        <location filename="widget.ui" line="966"/>
         <source>Save PDF</source>
         <translation>PDFを保存</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="943"/>
+        <location filename="widget.ui" line="983"/>
         <source>Open data dir</source>
         <translation>データを開く</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="950"/>
+        <location filename="widget.ui" line="990"/>
         <source>Open resouce</source>
         <translation>リソースを開く</translation>
     </message>
     <message>
-        <location filename="widget.ui" line="964"/>
-        <location filename="widget.cpp" line="167"/>
+        <location filename="widget.ui" line="1004"/>
+        <location filename="widget.cpp" line="171"/>
         <source>About</source>
         <translation>このソフトについて</translation>
     </message>
@@ -398,12 +419,12 @@
         <translation>%1個の星を読み込みました</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="126"/>
+        <location filename="widget.cpp" line="130"/>
         <source>Print PDF</source>
         <translation>PDFを保存</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="126"/>
+        <location filename="widget.cpp" line="130"/>
         <source>PDF (*.pdf)</source>
         <translation></translation>
     </message>

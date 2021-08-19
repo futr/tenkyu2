@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>856</width>
-    <height>687</height>
+    <width>880</width>
+    <height>781</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -357,7 +357,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>6.000000000000000</double>
+             <double>6.500000000000000</double>
             </property>
            </widget>
           </item>
@@ -417,7 +417,27 @@
           <item>
            <widget class="QCheckBox" name="printNamesCheckBox">
             <property name="text">
-             <string>Print Names</string>
+             <string>Print star name</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printConsteNameCheckBox">
+            <property name="text">
+             <string>Print conste name</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printMessierNameCheckBox">
+            <property name="text">
+             <string>Print messier name</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -475,6 +495,26 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="printCoordInfoCheckBox">
+            <property name="text">
+             <string>Print coordinate info</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printSegInfoCheckBox">
+            <property name="text">
+             <string>Print segment info</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="useAlphabetTextCheckBox">
             <property name="text">
              <string>Use alphabet text</string>
@@ -484,6 +524,23 @@
          </layout>
         </widget>
        </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
@@ -503,7 +560,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>6.500000000000000</double>
+             <double>7.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -520,7 +577,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>6.000000000000000</double>
+             <double>6.500000000000000</double>
             </property>
            </widget>
           </item>
@@ -537,7 +594,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>6.500000000000000</double>
+             <double>7.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -554,7 +611,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>7.000000000000000</double>
+             <double>7.500000000000000</double>
             </property>
            </widget>
           </item>
@@ -646,23 +703,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
         <widget class="QGroupBox" name="groupBox_8">
          <property name="title">
@@ -1011,11 +1051,15 @@
   <tabstop>minMagSpinBox</tabstop>
   <tabstop>invCheckBox</tabstop>
   <tabstop>printNamesCheckBox</tabstop>
+  <tabstop>printConsteNameCheckBox</tabstop>
+  <tabstop>printMessierNameCheckBox</tabstop>
   <tabstop>printConsteCheckBox</tabstop>
   <tabstop>printMessierCheckBox</tabstop>
   <tabstop>printObsLocCheckBox</tabstop>
   <tabstop>printCreditCheckBox</tabstop>
   <tabstop>printNameUnderLineCheckBox</tabstop>
+  <tabstop>printCoordInfoCheckBox</tabstop>
+  <tabstop>printSegInfoCheckBox</tabstop>
   <tabstop>useAlphabetTextCheckBox</tabstop>
   <tabstop>starNameSizeSpinBox</tabstop>
   <tabstop>messierNameSizeSpinBox</tabstop>
