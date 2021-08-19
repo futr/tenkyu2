@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>856</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>General 1</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>RA Splitting number</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="raNumSpinBox">
+            <property name="value">
+             <number>6</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Radius of Sphere[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="radiusSpinBox">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>128</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>DE resolution[deg]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="deResSpinBox">
+            <property name="value">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>Polar cap</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Cap north Dec[deg]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="capNSpinBox">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>90</number>
+            </property>
+            <property name="value">
+             <number>80</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Cap south Dec[deg]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="capSSpinBox">
+            <property name="minimum">
+             <number>-90</number>
+            </property>
+            <property name="maximum">
+             <number>-10</number>
+            </property>
+            <property name="value">
+             <number>-70</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Location</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Latitude[deg]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="latSpinBox">
+            <property name="minimum">
+             <number>-90</number>
+            </property>
+            <property name="maximum">
+             <number>90</number>
+            </property>
+            <property name="value">
+             <number>33</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Longitude[deg]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="longiSpinBox">
+            <property name="minimum">
+             <number>-180</number>
+            </property>
+            <property name="maximum">
+             <number>180</number>
+            </property>
+            <property name="value">
+             <number>131</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Printing 1</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Print offset X[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="printOffXSpinBpx">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Print offset Y[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="printOffYSpinBox">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Segment Offset X[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="segOffsetXSpinBox">
+            <property name="minimum">
+             <number>-1000</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Segment Offset Y[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="segOffsetYSpinBox">
+            <property name="minimum">
+             <number>-1000</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>South Offset X[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="southOffsetXSpinBox">
+            <property name="minimum">
+             <number>-1000</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>5</number>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>South Offset Y[mm]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="southOffsetYSpinBox">
+            <property name="minimum">
+             <number>-1000</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>5</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>RA repeat count</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QSpinBox" name="raCountSpinBox">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Dec repeat count</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QSpinBox" name="deCountSpinBox">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="title">
+          <string>Star size</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_6">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>Star size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDoubleSpinBox" name="starSizeSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>6.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_27">
+            <property name="text">
+             <string>Star size factor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDoubleSpinBox" name="starSizeFactorSpinBox">
+            <property name="maximum">
+             <double>100.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.300000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="minMagSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>8.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Min magnitude</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Drawing 1</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QCheckBox" name="invCheckBox">
+            <property name="text">
+             <string>Mirror</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printNamesCheckBox">
+            <property name="text">
+             <string>Print Names</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printConsteCheckBox">
+            <property name="text">
+             <string>Print constellations</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printMessierCheckBox">
+            <property name="text">
+             <string>Print messiers</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printObsLocCheckBox">
+            <property name="text">
+             <string>Print observation location</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printCreditCheckBox">
+            <property name="text">
+             <string>Print credit text</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printNameUnderLineCheckBox">
+            <property name="text">
+             <string>Print name underline</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="useAlphabetTextCheckBox">
+            <property name="text">
+             <string>Use alphabet text</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Drawing 2</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Star name size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDoubleSpinBox" name="starNameSizeSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>6.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Messier name size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDoubleSpinBox" name="messierNameSizeSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>6.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>Conste name size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="consteNameSizeSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>6.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Info text size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QDoubleSpinBox" name="infoTextSizeSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>7.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Grid line width</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QDoubleSpinBox" name="gridLineWidthSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>1.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>Conste line width</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QDoubleSpinBox" name="consteLineWidthSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>0.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Messier line width</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QDoubleSpinBox" name="messierLineWidthSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>0.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_25">
+            <property name="text">
+             <string>Messier radius</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QDoubleSpinBox" name="messierRadiusSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>3.500000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>Obs location line width</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QDoubleSpinBox" name="obsLocLineWidthSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <double>0.800000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>Color</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_7">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>Frame color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="ColorSelectButton" name="frameColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_29">
+            <property name="text">
+             <string>Grid color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="ColorSelectButton" name="gridColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>Background color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="ColorSelectButton" name="bgColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>Star color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="ColorSelectButton" name="starColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_36">
+            <property name="text">
+             <string>Star name color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="ColorSelectButton" name="starNameColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_37">
+            <property name="text">
+             <string>Under line color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="ColorSelectButton" name="underLineColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_32">
+            <property name="text">
+             <string>Conste color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="ColorSelectButton" name="consteColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_33">
+            <property name="text">
+             <string>Messier color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="ColorSelectButton" name="messierColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_34">
+            <property name="text">
+             <string>Obs location color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="ColorSelectButton" name="obsLocationColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_35">
+            <property name="text">
+             <string>Info text color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="ColorSelectButton" name="infoTextColorButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="color" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="title">
+          <string>File</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QCheckBox" name="useDateNameCheckBox">
+            <property name="text">
+             <string>Use date filename</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPushButton" name="printButton">
+       <property name="text">
+        <string>Save PDF</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="openStarButton">
+       <property name="text">
+        <string>Open data dir</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="openResourceButton">
+       <property name="text">
+        <string>Open resouce</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="showCreditButton">
+       <property name="text">
+        <string>About</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ColorSelectButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">colorselectbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>raNumSpinBox</tabstop>
+  <tabstop>radiusSpinBox</tabstop>
+  <tabstop>deResSpinBox</tabstop>
+  <tabstop>capNSpinBox</tabstop>
+  <tabstop>capSSpinBox</tabstop>
+  <tabstop>latSpinBox</tabstop>
+  <tabstop>longiSpinBox</tabstop>
+  <tabstop>printOffXSpinBpx</tabstop>
+  <tabstop>printOffYSpinBox</tabstop>
+  <tabstop>segOffsetXSpinBox</tabstop>
+  <tabstop>segOffsetYSpinBox</tabstop>
+  <tabstop>southOffsetXSpinBox</tabstop>
+  <tabstop>southOffsetYSpinBox</tabstop>
+  <tabstop>raCountSpinBox</tabstop>
+  <tabstop>deCountSpinBox</tabstop>
+  <tabstop>starSizeSpinBox</tabstop>
+  <tabstop>starSizeFactorSpinBox</tabstop>
+  <tabstop>minMagSpinBox</tabstop>
+  <tabstop>invCheckBox</tabstop>
+  <tabstop>printNamesCheckBox</tabstop>
+  <tabstop>printConsteCheckBox</tabstop>
+  <tabstop>printMessierCheckBox</tabstop>
+  <tabstop>printObsLocCheckBox</tabstop>
+  <tabstop>printCreditCheckBox</tabstop>
+  <tabstop>printNameUnderLineCheckBox</tabstop>
+  <tabstop>useAlphabetTextCheckBox</tabstop>
+  <tabstop>starNameSizeSpinBox</tabstop>
+  <tabstop>messierNameSizeSpinBox</tabstop>
+  <tabstop>consteNameSizeSpinBox</tabstop>
+  <tabstop>infoTextSizeSpinBox</tabstop>
+  <tabstop>gridLineWidthSpinBox</tabstop>
+  <tabstop>consteLineWidthSpinBox</tabstop>
+  <tabstop>messierLineWidthSpinBox</tabstop>
+  <tabstop>messierRadiusSpinBox</tabstop>
+  <tabstop>obsLocLineWidthSpinBox</tabstop>
+  <tabstop>frameColorButton</tabstop>
+  <tabstop>gridColorButton</tabstop>
+  <tabstop>bgColorButton</tabstop>
+  <tabstop>starColorButton</tabstop>
+  <tabstop>starNameColorButton</tabstop>
+  <tabstop>underLineColorButton</tabstop>
+  <tabstop>consteColorButton</tabstop>
+  <tabstop>messierColorButton</tabstop>
+  <tabstop>obsLocationColorButton</tabstop>
+  <tabstop>infoTextColorButton</tabstop>
+  <tabstop>useDateNameCheckBox</tabstop>
+  <tabstop>printButton</tabstop>
+  <tabstop>openStarButton</tabstop>
+  <tabstop>openResourceButton</tabstop>
+  <tabstop>showCreditButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
