@@ -987,7 +987,7 @@
      <item>
       <widget class="QPushButton" name="openResourceButton">
        <property name="text">
-        <string>Open resouce</string>
+        <string>Open resource</string>
        </property>
       </widget>
      </item>

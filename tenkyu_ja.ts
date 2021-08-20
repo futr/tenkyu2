@@ -14,53 +14,53 @@
         <translation>upr</translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="328"/>
+        <location filename="celestialsphereprinter.cpp" line="331"/>
         <source>Zenith at %1°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="330"/>
+        <location filename="celestialsphereprinter.cpp" line="333"/>
         <source>緯度 %1°の天頂</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="514"/>
+        <location filename="celestialsphereprinter.cpp" line="517"/>
         <source>%1h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="518"/>
+        <location filename="celestialsphereprinter.cpp" line="521"/>
         <source>%1/20 %2h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="520"/>
+        <location filename="celestialsphereprinter.cpp" line="523"/>
         <source>%1/20 %2時</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="587"/>
+        <location filename="celestialsphereprinter.cpp" line="590"/>
         <source>RA %1° to %2°, Dec %3° to %4°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="589"/>
+        <location filename="celestialsphereprinter.cpp" line="592"/>
         <source>赤経 %1° から %2°, 赤緯 %3° から %4°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="830"/>
-        <location filename="celestialsphereprinter.cpp" line="832"/>
+        <location filename="celestialsphereprinter.cpp" line="833"/>
+        <location filename="celestialsphereprinter.cpp" line="835"/>
         <source>0h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="841"/>
+        <location filename="celestialsphereprinter.cpp" line="844"/>
         <source>Dec %1° to %2°</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="843"/>
+        <location filename="celestialsphereprinter.cpp" line="846"/>
         <source>赤緯 %1° から %2°</source>
         <translation></translation>
     </message>
@@ -397,7 +397,8 @@
     </message>
     <message>
         <location filename="widget.ui" line="990"/>
-        <source>Open resouce</source>
+        <source>Open resource</source>
+        <oldsource>Open resouce</oldsource>
         <translation>リソースを開く</translation>
     </message>
     <message>
