@@ -24,8 +24,8 @@ signals:
     void processPage( int progress, int max );
 
 public:
-// private:
     bool startWritePDF( QString fileName, QIODevice *dev = nullptr );
+private:
     void paintStarFune( QPainter *painter, int raPos, int dePos, QPointF segOffsetMm, int dpi);
     void paintStarCap( QPainter *painter, int edgeDE, QPointF segOffsetMm, int dpi );
     double mmToPx( double mm, double dpi );
@@ -46,7 +46,13 @@ public:
     void drawLineOnCap(QPainter *p, CelestialLine line, QPointF segOffsetMm, int edgeDE, QPen pen, int dpi, bool invRA);
 
     void drawCreditText(QPainter *p, QPointF offsetMm, int dpi);
-
+public:
+    double getObsPointZenithRADeg();
+    QDateTime getLocalDateTime();
+    double getGST( QDateTime dt );
+    double getGST2000( QDateTime dt );
+private:
+    bool isNorth( int dePos );
 private:
     StarMap starMap;
 public:
@@ -63,6 +69,13 @@ public:
     double forceHeight    = 130;
     double maxMagnitude   = 8;
     double obsLatitude    = 35;
+    double obsLongitude   = 135;
+    int differHourFromUTC = 9;
+    int obsLocalYear      = 2021;
+    int obsLocalMonth     = 8;
+    int obsLocalDay       = 20;
+    double obsLocalHour   = 20;
+    double obsLocalMin    = 0;
     double starSize       = 6.5;
     double starSizeFactor = 1.30;
     int raSplit           = 6;
@@ -81,6 +94,7 @@ public:
     bool printCreditText      = true;
     bool printCoordinateText  = true;
     bool printSegmentInfoText = true;
+    bool printObsPointZenith  = false;
     bool useAlphabetText      = false;
     double starNamePoint     = 7;
     double messierNamePoint  = 6.5;
@@ -96,15 +110,14 @@ public:
     QColor bgColor        = QColor( Qt::white );
     QColor starColor      = QColor( Qt::blue );
     QColor consteColor    = QColor( Qt::red );
-    QColor messierColor   = QColor( "#9400d3" );
+    QColor messierColor   = QColor( 0x94, 0x00, 0xd3 );
     QColor obsPointColor  = QColor( Qt::darkGreen );
     QColor infoStrColor   = QColor( Qt::black );
     QColor starNameColor  = QColor( Qt::black );
     QColor underLineColor = QColor( Qt::gray );
     QColor gridColor      = QColor( Qt::gray );
     QColor frameColor     = QColor( Qt::black );
-private:
-    bool isNorth( int dePos );
+
 };
 
 #endif // CELESTIALSPHEREPRINTER_H

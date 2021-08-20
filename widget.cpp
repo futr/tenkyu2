@@ -30,6 +30,8 @@ Widget::Widget(QWidget *parent) :
     ui->messierColorButton->setColor( cp.messierColor );
     ui->obsLocationColorButton->setColor( cp.obsPointColor );
     ui->infoTextColorButton->setColor( cp.infoStrColor );
+
+    qDebug() << cp.getLocalDateTime() << cp.getLocalDateTime().toUTC() << cp.getGST( cp.getLocalDateTime() ) << cp.getObsPointZenithRADeg();
 }
 
 Widget::~Widget()

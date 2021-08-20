@@ -1393,6 +1393,52 @@ void CelestialSpherePrinter::drawCreditText(QPainter *p, QPointF offsetMm, int d
     p->restore();
 }
 
+double CelestialSpherePrinter::getObsPointZenithRADeg()
+{
+    // 指定日時の頂点の赤経を計算
+    auto localDateTime = getLocalDateTime();
+    auto UTCDateTime = localDateTime.toUTC().time();
+    double msecs = UTCDateTime.msecsSinceStartOfDay();
+
+    double gst = getGST( localDateTime );
+    double localRAonUTC0 = obsLongitude + gst / 24 * 360;
+    double localRA = localRAonUTC0 + msecs / 1000 / 60 / 60 / 24 * 360;
+
+    // 360度に丸め込む
+    localRA = localRA - qFloor( localRA / 360 ) * 360;
+
+    return localRA;
+}
+
+QDateTime CelestialSpherePrinter::getLocalDateTime()
+{
+    return QDateTime( QDate( obsLocalYear, obsLocalMonth, obsLocalDay ), QTime( obsLocalHour, obsLocalMin ), Qt::OffsetFromUTC, differHourFromUTC * 60 * 60 );
+}
+
+double CelestialSpherePrinter::getGST(QDateTime dt)
+{
+    // 日時をGST(平均春分点)に変換
+
+    // DateTimeは地方時であるとする。
+    auto utc = dt.toUTC();
+    double julianDay = utc.date().toJulianDay() - 0.5;
+    double T = 0.671262 + 1.00273791 * (julianDay - 2440000.5);
+    double thetaG0 = 24.0 * ( T - qFloor( T ) );
+    double GST = thetaG0;
+    return GST;
+}
+
+double CelestialSpherePrinter::getGST2000(QDateTime dt)
+{
+    // 日時をGST(2000.0分点)に変換
+    auto utc = dt.toUTC();
+    double julianDay = utc.date().toJulianDay() - 0.5;
+    double T = ( julianDay - 2451545.0) / 36525;
+    double TG = (24110.54841 + 8640184.812866 * T + 0.093104 * T * T - 0.0000062 * T * T * T) / 86400;
+    double thetaG0 = 24 * (TG - qFloor( TG ));
+    return thetaG0;
+}
+
 bool CelestialSpherePrinter::isNorth(int dePos)
 {
     if ( dePos == 0 ) {
