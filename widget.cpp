@@ -34,9 +34,6 @@ Widget::Widget(QWidget *parent) :
     auto currentDateTime = QDateTime::currentDateTime();
     currentDateTime.setTime( QTime( 20, 0 ) );
     ui->dateTimeEdit->setDateTime( currentDateTime );
-
-
-    qDebug() << cp.getLocalDateTime() << cp.getLocalDateTime().toUTC() << cp.getGST( cp.getLocalDateTime() );
 }
 
 Widget::~Widget()

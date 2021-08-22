@@ -4,7 +4,6 @@
 #include <QTextDocument>
 #include <QPdfWriter>
 #include <QDebug>
-#include "sofa/20210125_a/c/src/sofa.h"
 
 CelestialSpherePrinter::CelestialSpherePrinter(QObject *parent) : QObject(parent)
 {
@@ -394,8 +393,10 @@ void CelestialSpherePrinter::paintStarFune(QPainter *painter, int raPos, int deP
             pen.setColor( obsPointColor );
             pen.setStyle( Qt::SolidLine );
             font.setPointSizeF( infoStrPoint );
-            drawStringRawPxAling( painter, latStr, pen, font, Qt::AlignHCenter | Qt::AlignBottom, false, px, 0, QPointF( 0, -2 ) );
-            drawCrossToRawPx( painter, px, 6, 6, pen );
+            drawStringOnFune( painter, latStr, pen, font, false, false, false, true, QPointF( 0, -1 ), dePos, dtheta, phi, dpi, segOffsetMm );
+            // drawStringRawPxAling( painter, latStr, pen, font, Qt::AlignHCenter | Qt::AlignBottom, false, px, 0, QPointF( 0, -2 ) );
+            pen.setWidthF( 1 );
+            drawCrossToRawPx( painter, px, 8, 8, pen );
         }
     }
 
@@ -1114,14 +1115,6 @@ void CelestialSpherePrinter::drawStringOnFune(QPainter *p, QString str, QPen pen
     QRectF br;
     p->drawText( textRect, Qt::AlignCenter, str, &br );
 
-    // Debug
-    /*
-    QPen lpen = p->pen();
-    lpen.setWidthF( 0.1 );
-    p->setPen( lpen );
-    p->drawRect( textRect );
-    */
-
     // 必要なら下線
     if ( drawUnderLine ) {
         QPen lpen = p->pen();
@@ -1436,14 +1429,7 @@ CelestialPos CelestialSpherePrinter::getObsPointZenith()
     auto r = getPrecession( CelestialPos( localRA, obsLatitude ) );
     double newRA = localRA + ( localRA - r.ra );
     newRA = newRA - qFloor( newRA / 360 ) * 360;
-    double newDec = obsLatitude + ( obsLatitude - r.de );
-
-    double jd = getJulianDay( getLocalDateTime() );
-    double eps0, psia, oma, bpa, bqa, pia, bpia, epsa, chia, za, zetaa, thetaa, pa, gam, phi, psi;
-    iauP06e( jd, 0, &eps0, &psia, &oma, &bpa, &bqa, &pia, &bpia, &epsa, &chia, &za, &zetaa, &thetaa, &pa, &gam, &phi, &psi );
-
-    qDebug() << "MNAL :" << localRA - r.ra << obsLatitude - r.de;
-    qDebug() << "NUT :" << qRadiansToDegrees( gam ) << qRadiansToDegrees( phi )<< qRadiansToDegrees( psi );
+    double newDec = obsLatitude;
 
     return CelestialPos( newRA, newDec );
 }
@@ -1453,15 +1439,6 @@ QDateTime CelestialSpherePrinter::getLocalDateTime()
     return obsLocalDateTime;
 }
 
-double CelestialSpherePrinter::getWrongGST(QDateTime dt)
-{
-    auto utc = dt.toUTC();
-    double julianDay = getJulianDay( dt );
-    double T = 0.671262 + 1.0027379094 * ( julianDay - 2440000.5 );
-    double thetaG0 = 24.0 * ( T - quint64( T ) );
-    double GST = thetaG0;
-    return GST;
-}
 
 double CelestialSpherePrinter::getGST(QDateTime dt)
 {
@@ -1471,25 +1448,6 @@ double CelestialSpherePrinter::getGST(QDateTime dt)
     double thetaG0 = 24.0 * ( T - quint64( T ) );
     double GST = thetaG0;
     return GST;
-}
-
-double CelestialSpherePrinter::getGST2000(QDateTime dt)
-{
-    // 日時をGST(2000.0分点)に変換
-    /*
-    auto utc = dt.toUTC();
-    double julianDay = utc.date().toJulianDay() - 0.5;
-    double T = ( julianDay - 2451545.0 ) / 36525;
-    double TG = (24110.54841 + 8640184.812866 * T + 0.093104 * T * T - 0.0000062 * T * T * T ) / 86400 + 1.0027379094 * dt.toUTC().time().msecsSinceStartOfDay() / 1000.0 / 60 / 60 / 24;
-    double thetaG0 = 24 * (TG - qFloor( TG ));
-    return thetaG0;
-    */
-    double julianDay = getJulianDay( dt );
-    double TU = ( julianDay - 2451545.0 );
-    double TE = TU + 67.6439 * 1 / ( 24 * 60 * 60 );
-    double TG = (24110.5493771 + 8639877.3173760 * TU + 307.4771600 * TE + 0.0931118 * qPow( TE, 2 ) - 0.0000062 * qPow( TE, 3 ) + 0.0000013 * qPow( TE, 4 ) );
-    double thetaG0 = 24 * (TG - quint64( TG ));
-    return thetaG0;
 }
 
 double CelestialSpherePrinter::getJulianDay(QDateTime dt)
@@ -1505,16 +1463,6 @@ double CelestialSpherePrinter::getJulianDay(QDateTime dt)
 
     double JD = JDN + ( utc.time().hour() - 12 ) / 24.0 + utc.time().minute() / 1440.0 + utc.time().second() / 86400;
     return JD;
-}
-
-double CelestialSpherePrinter::getGAST(QDateTime dt)
-{
-    double JD = getJulianDay( dt );
-
-    double TT1, TT2;
-    iauUt1tt( JD, 0, 67.6439, &TT1, &TT2 );
-    double gst06a = iauGst06a( JD, 0, TT1, TT2 );
-    return gst06a / ( 2 * M_PI ) * 24;
 }
 
 CelestialPos CelestialSpherePrinter::getPrecession( CelestialPos pos )

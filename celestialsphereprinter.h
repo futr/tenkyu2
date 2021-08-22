@@ -49,11 +49,8 @@ private:
 public:
     CelestialPos getObsPointZenith();
     QDateTime getLocalDateTime();
-    double getWrongGST( QDateTime dt );
     double getGST( QDateTime dt );
-    double getGST2000( QDateTime dt );
     double getJulianDay( QDateTime dt );
-    double getGAST( QDateTime dt );
     CelestialPos getPrecession(CelestialPos pos);
 private:
     bool isNorth( int dePos );
