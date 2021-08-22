@@ -328,9 +328,9 @@ void CelestialSpherePrinter::paintStarFune(QPainter *painter, int raPos, int deP
                 QString latStr;
 
                 if ( useAlphabetText ) {
-                    latStr = tr( "Zenith at %1°" ).arg( static_cast<int>( obsLatitude ) );
+                    latStr = QString( "Zenith at %1°" ).arg( static_cast<int>( obsLatitude ) );
                 } else {
-                    latStr = tr( "緯度 %1°の天頂" ).arg( static_cast<int>( obsLatitude ) );
+                    latStr = tr( "Zenith at %1°" ).arg( static_cast<int>( obsLatitude ) );
                 }
 
                 auto px = mmPosOnFuneToPrintPos( mmPosOnFune( 0, qDegreesToRadians( obsLatitude ) ), dpi, dePos, segOffsetMm );
@@ -381,9 +381,9 @@ void CelestialSpherePrinter::paintStarFune(QPainter *painter, int raPos, int deP
             double phi = rp.y();
 
             if ( useAlphabetText ) {
-                latStr = tr( "Zenith at %1°" ).arg( getLocalDateTime().toString( tr( "dd.MM hh:mm" ) ) );
+                latStr = QString( "Zenith at %1" ).arg( getLocalDateTime().toString( QString( "dd.MM hh:mm" ) ) );
             } else {
-                latStr = tr( "%1の天頂" ).arg( getLocalDateTime().toString( tr( "M/d hh:mm" ) ) );
+                latStr = tr( "Zenith at %1" ).arg( getLocalDateTime().toString( tr( "M/d hh:mm" ) ) );
             }
 
             auto px = mmPosOnFuneToPrintPos( mmPosOnFune( dtheta, phi ), dpi, dePos, segOffsetMm );
@@ -550,9 +550,9 @@ void CelestialSpherePrinter::paintStarFune(QPainter *painter, int raPos, int deP
             QString raDateStr;
 
             if ( useAlphabetText ) {
-                raDateStr = tr( "%1/20 %2h" ).arg( raMonth ).arg( timeBase + 20 );
+                raDateStr = QString( "%1/20 %2h" ).arg( raMonth ).arg( timeBase + 20 );
             } else {
-                raDateStr = tr( "%1/20 %2時" ).arg( raMonth ).arg( timeBase + 20 );
+                raDateStr = tr( "%1/20 %2h" ).arg( raMonth ).arg( timeBase + 20 );
             }
 
             auto rp = radianPosOnFune( centerRA, raH * 15, 0, inv );
@@ -619,9 +619,9 @@ void CelestialSpherePrinter::paintStarFune(QPainter *painter, int raPos, int deP
         QString infoText;
 
         if ( useAlphabetText ) {
-            infoText = tr( "RA %1° to %2°, Dec %3° to %4°" ).arg( minRA ).arg( maxRA ).arg( minDE ).arg( maxDE );
+            infoText = QString( "RA %1° to %2°, Dec %3° to %4°" ).arg( minRA ).arg( maxRA ).arg( minDE ).arg( maxDE );
         } else {
-            infoText = tr( "赤経 %1° から %2°, 赤緯 %3° から %4°" ).arg( minRA ).arg( maxRA ).arg( minDE ).arg( maxDE );
+            infoText = tr( "RA %1° to %2°, Dec %3° to %4°" ).arg( minRA ).arg( maxRA ).arg( minDE ).arg( maxDE );
         }
 
         pen.setColor( infoStrColor );
@@ -873,9 +873,9 @@ void CelestialSpherePrinter::paintStarCap(QPainter *painter, int edgeDE, QPointF
         QString infoText;
 
         if ( useAlphabetText ) {
-            infoText = tr( "Dec %1° to %2°" ).arg( minDE ).arg( maxDE );
+            infoText = QString( "Dec %1° to %2°" ).arg( minDE ).arg( maxDE );
         } else {
-            infoText = tr( "赤緯 %1° から %2°" ).arg( minDE ).arg( maxDE );
+            infoText = tr( "Dec %1° to %2°" ).arg( minDE ).arg( maxDE );
         }
 
         pen.setColor( infoStrColor );

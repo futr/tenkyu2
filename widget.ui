@@ -581,7 +581,7 @@
           <item>
            <widget class="QCheckBox" name="useAlphabetTextCheckBox">
             <property name="text">
-             <string>Use alphabet text</string>
+             <string>English mode</string>
             </property>
            </widget>
           </item>
