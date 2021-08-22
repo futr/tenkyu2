@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QPainter>
 #include <QPageSize>
+#include <QDateTime>
 #include "starmap.h"
 
 class CelestialSpherePrinter : public QObject
@@ -16,6 +17,7 @@ public slots:
     QString generateFileName( bool useDate );
     bool openStarData( QString dirName );
     bool startPrinting( QString fileName );
+    bool startWritePDF( QString fileName, QIODevice *dev = nullptr );
 public:
     QString getCreditText();
     int getStarCount() const;
@@ -23,8 +25,6 @@ public:
 signals:
     void processPage( int progress, int max );
 
-public:
-    bool startWritePDF( QString fileName, QIODevice *dev = nullptr );
 private:
     void paintStarFune( QPainter *painter, int raPos, int dePos, QPointF segOffsetMm, int dpi);
     void paintStarCap( QPainter *painter, int edgeDE, QPointF segOffsetMm, int dpi );
@@ -47,10 +47,14 @@ private:
 
     void drawCreditText(QPainter *p, QPointF offsetMm, int dpi);
 public:
-    double getObsPointZenithRADeg();
+    CelestialPos getObsPointZenith();
     QDateTime getLocalDateTime();
+    double getWrongGST( QDateTime dt );
     double getGST( QDateTime dt );
     double getGST2000( QDateTime dt );
+    double getJulianDay( QDateTime dt );
+    double getGAST( QDateTime dt );
+    CelestialPos getPrecession(CelestialPos pos);
 private:
     bool isNorth( int dePos );
 private:
@@ -70,12 +74,13 @@ public:
     double maxMagnitude   = 8;
     double obsLatitude    = 35;
     double obsLongitude   = 135;
-    int differHourFromUTC = 9;
-    int obsLocalYear      = 2021;
-    int obsLocalMonth     = 8;
-    int obsLocalDay       = 20;
-    double obsLocalHour   = 20;
-    double obsLocalMin    = 0;
+    int offsetHourFromUTC = 9;
+    QDateTime obsLocalDateTime = QDateTime( QDate( 2021, 8, 20 ), QTime( 20, 0 ), Qt::TimeSpec::OffsetFromUTC, offsetHourFromUTC * 60 * 60 );
+    //int obsLocalYear      = 2021;
+    //int obsLocalMonth     = 8;
+    //int obsLocalDay       = 20;
+    //double obsLocalHour   = 20;
+    //double obsLocalMin    = 0;
     double starSize       = 6.5;
     double starSizeFactor = 1.30;
     int raSplit           = 6;

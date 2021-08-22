@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>880</width>
-    <height>781</height>
+    <width>942</width>
+    <height>786</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -164,6 +164,63 @@
             </property>
             <property name="value">
              <number>131</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="title">
+          <string>Time</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_8">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string>Offset from UTC[h]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="offsetFromUTCSpinBox">
+            <property name="minimum">
+             <number>-12</number>
+            </property>
+            <property name="maximum">
+             <number>12</number>
+            </property>
+            <property name="value">
+             <number>9</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_38">
+            <property name="text">
+             <string>Local date time</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDateTimeEdit" name="dateTimeEdit">
+            <property name="dateTime">
+             <datetime>
+              <hour>20</hour>
+              <minute>0</minute>
+              <second>0</second>
+              <year>2021</year>
+              <month>8</month>
+              <day>20</day>
+             </datetime>
+            </property>
+            <property name="time">
+             <time>
+              <hour>20</hour>
+              <minute>0</minute>
+              <second>0</second>
+             </time>
             </property>
            </widget>
           </item>
@@ -471,6 +528,13 @@
             </property>
             <property name="checked">
              <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="printZenithCheckBox">
+            <property name="text">
+             <string>Print zenith</string>
             </property>
            </widget>
           </item>
@@ -1038,6 +1102,8 @@
   <tabstop>capSSpinBox</tabstop>
   <tabstop>latSpinBox</tabstop>
   <tabstop>longiSpinBox</tabstop>
+  <tabstop>offsetFromUTCSpinBox</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
   <tabstop>printOffXSpinBpx</tabstop>
   <tabstop>printOffYSpinBox</tabstop>
   <tabstop>segOffsetXSpinBox</tabstop>

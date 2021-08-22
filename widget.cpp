@@ -31,7 +31,12 @@ Widget::Widget(QWidget *parent) :
     ui->obsLocationColorButton->setColor( cp.obsPointColor );
     ui->infoTextColorButton->setColor( cp.infoStrColor );
 
-    qDebug() << cp.getLocalDateTime() << cp.getLocalDateTime().toUTC() << cp.getGST( cp.getLocalDateTime() ) << cp.getObsPointZenithRADeg();
+    auto currentDateTime = QDateTime::currentDateTime();
+    currentDateTime.setTime( QTime( 20, 0 ) );
+    ui->dateTimeEdit->setDateTime( currentDateTime );
+
+
+    qDebug() << cp.getLocalDateTime() << cp.getLocalDateTime().toUTC() << cp.getGST( cp.getLocalDateTime() );
 }
 
 Widget::~Widget()
@@ -95,9 +100,11 @@ void Widget::startPrinting()
     cp.printMessierName = ui->printMessierNameCheckBox->isChecked();
     cp.maxMagnitude = ui->minMagSpinBox->value();
     cp.obsLatitude = ui->latSpinBox->value();
+    cp.obsLongitude = ui->longiSpinBox->value();
     cp.printConstellations = ui->printConsteCheckBox->isChecked();
     cp.printMessiers = ui->printMessierCheckBox->isChecked();
     cp.printObsPointLine = ui->printObsLocCheckBox->isChecked();
+    cp.printObsPointZenith = ui->printZenithCheckBox->isChecked();
     cp.printNameUnderLine = ui->printNameUnderLineCheckBox->isChecked();
     cp.printCreditText = ui->printCreditCheckBox->isChecked();
     cp.printCoordinateText = ui->printCoordInfoCheckBox->isChecked();
@@ -127,6 +134,9 @@ void Widget::startPrinting()
     cp.messierColor = ui->messierColorButton->color();
     cp.obsPointColor = ui->obsLocationColorButton->color();
     cp.infoStrColor = ui->infoTextColorButton->color();
+
+    cp.offsetHourFromUTC = ui->offsetFromUTCSpinBox->value();
+    cp.obsLocalDateTime = QDateTime( ui->dateTimeEdit->date(), ui->dateTimeEdit->time(), Qt::TimeSpec::OffsetFromUTC, static_cast<int>( cp.offsetHourFromUTC * 60 * 60 ) );
 
     QString docName = QDir( QFileInfo( beforeFileName ).absolutePath() ).absoluteFilePath( cp.generateFileName( ui->useDateNameCheckBox->isChecked() ) );
     QString fileName = QFileDialog::getSaveFileName( this, tr( "Print PDF" ), docName, tr("PDF (*.pdf)") );
