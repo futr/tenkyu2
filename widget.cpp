@@ -17,7 +17,8 @@ Widget::Widget(QWidget *parent) :
     connect( ui->openStarButton,     &QPushButton::clicked, this, &Widget::openStarDir );
     connect( ui->openResourceButton, &QPushButton::clicked, this, &Widget::openStarResourceUI );
     connect( ui->showCreditButton,   &QPushButton::clicked, this, &Widget::showCredit );
-    connect( ui->printButton,    &QPushButton::clicked, this, &Widget::startPrinting );
+    connect( ui->printButton,        &QPushButton::clicked, this, &Widget::startPrinting );
+    connect( ui->getLocationButton,  &QPushButton::clicked, this, &Widget::acquireLocation );
     connect( &cp, &CelestialSpherePrinter::processPage, this, &Widget::pageProcessed );
 
     ui->gridColorButton->setColor( cp.gridColor );
@@ -34,6 +35,7 @@ Widget::Widget(QWidget *parent) :
     auto currentDateTime = QDateTime::currentDateTime();
     currentDateTime.setTime( QTime( 20, 0 ) );
     ui->dateTimeEdit->setDateTime( currentDateTime );
+    ui->offsetFromUTCSpinBox->setValue( currentDateTime.offsetFromUtc() / 60 / 60 );
 }
 
 Widget::~Widget()
@@ -45,12 +47,12 @@ void Widget::openStarDir()
 {
     QString dirName;
 
-    if ( ( dirName = QFileDialog::getExistingDirectory( this, "Select star data file" ) ) == "" ) {
+    if ( ( dirName = QFileDialog::getExistingDirectory( this, tr( "Select star data file" ) ) ) == "" ) {
         return;
     }
 
     if ( !cp.openStarData( dirName ) ) {
-        QMessageBox::critical( this, "Error", "Failed to open star data file" );
+        QMessageBox::critical( this, tr( "Error" ), tr( "Failed to open star data file" ) );
         return;
     } else {
         QMessageBox::information( this, tr( "Data loaded" ), tr( "%1 stars have been loaded" ).arg( cp.getStarCount() ) );
@@ -70,7 +72,7 @@ bool Widget::openStarResource(bool showInfo)
     dirName = ":/data";
 
     if ( !cp.openStarData( dirName ) ) {
-        if ( showInfo ) QMessageBox::critical( this, "Error", "Failed to open star data file" );
+        if ( showInfo ) QMessageBox::critical( this, tr( "Error" ), tr( "Failed to open star data file" ) );
         return false;
     } else {
         if ( showInfo ) QMessageBox::information( this, tr( "Data loaded" ), tr( "%1 stars have been loaded" ).arg( cp.getStarCount() ) );
@@ -142,13 +144,13 @@ void Widget::startPrinting()
         return;
     }
 
-    setDisabled( true );
+    setProcessing( true );
     pageProcessed( 0, 0 );
 
     // Read data from resource if no stars have been loaded
     if ( cp.getStarCount() == 0 ) {
         if ( !openStarResource( false ) ) {
-            setEnabled( true );
+            setProcessing( false );
             return;
         }
     }
@@ -157,7 +159,7 @@ void Widget::startPrinting()
 
     cp.startPrinting( fileName );
 
-    setEnabled( true );
+    setProcessing( false );
 }
 
 void Widget::pageProcessed(int i, int max)
@@ -180,4 +182,35 @@ void Widget::showCredit()
     d->setWindowTitle( tr( "About" ) );
     d->resize( this->size() * 0.8 );
     d->exec();
+}
+
+void Widget::acquireLocation()
+{
+    // Acquire location information
+    if ( !posSource ) {
+        posSource = QGeoPositionInfoSource::createDefaultSource( this );
+
+        if ( posSource ) {
+            connect( posSource, &QGeoPositionInfoSource::positionUpdated, this, [this]( const QGeoPositionInfo &update ){
+                if ( update.coordinate().isValid() ) {
+                    ui->latSpinBox->setValue( update.coordinate().latitude() );
+                    ui->longiSpinBox->setValue( update.coordinate().longitude() );
+                }
+            } );
+            connect( posSource, qOverload<QGeoPositionInfoSource::Error>( &QGeoPositionInfoSource::error ), this, [this]( QGeoPositionInfoSource::Error error ) {
+                QMessageBox::warning( this, tr( "Failed" ), tr( "Failed to acquire location : %1\n\nYou may need to configure your OS to acquire location information." ).arg( error ) );
+            } );
+        }
+    }
+
+    if ( posSource ) {
+        posSource->requestUpdate( 1000 );
+    }
+}
+
+void Widget::setProcessing(bool set)
+{
+    ui->printButton->setEnabled( !set );
+    ui->openResourceButton->setEnabled( !set );
+    ui->openStarButton->setEnabled( !set );
 }

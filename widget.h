@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QFileDialog>
-#include <QDebug>
+#include <QGeoPositionInfoSource>
 
 #include "starmap.h"
 #include "celestialsphereprinter.h"
@@ -24,15 +24,18 @@ public slots:
     bool openStarResource(bool showInfo);
     bool openStarResourceUI();
     void startPrinting();
-
     void pageProcessed( int i, int max );
-
     void showCredit();
+    void acquireLocation();
+
+private:
+    void setProcessing( bool set );
 
 private:
     Ui::Widget *ui;
     CelestialSpherePrinter cp;
     QString beforeFileName;
+    QGeoPositionInfoSource *posSource = nullptr;
 };
 
 #endif // WIDGET_H

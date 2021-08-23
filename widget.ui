@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>942</width>
+    <width>926</width>
     <height>786</height>
    </rect>
   </property>
@@ -134,19 +134,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QSpinBox" name="latSpinBox">
-            <property name="minimum">
-             <number>-90</number>
-            </property>
-            <property name="maximum">
-             <number>90</number>
-            </property>
-            <property name="value">
-             <number>33</number>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_6">
             <property name="text">
@@ -154,16 +141,48 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QSpinBox" name="longiSpinBox">
+          <item row="0" column="1">
+           <widget class="QDoubleSpinBox" name="latSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
             <property name="minimum">
-             <number>-180</number>
+             <double>-90.000000000000000</double>
             </property>
             <property name="maximum">
-             <number>180</number>
+             <double>90.000000000000000</double>
             </property>
             <property name="value">
-             <number>131</number>
+             <double>33.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDoubleSpinBox" name="longiSpinBox">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="minimum">
+             <double>-180.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>180.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>131.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="getLocationButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Get location</string>
             </property>
            </widget>
           </item>
@@ -414,7 +433,7 @@
              <number>1</number>
             </property>
             <property name="value">
-             <double>6.500000000000000</double>
+             <double>7.000000000000000</double>
             </property>
            </widget>
           </item>
