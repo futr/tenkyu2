@@ -89,7 +89,6 @@ void Widget::startPrinting()
     cp.pageOffsetMm    = QPointF( ui->printOffXSpinBpx->value(), ui->printOffYSpinBox->value() );
     cp.southOffsetMm   = QPointF( ui->southOffsetXSpinBox->value(), ui->southOffsetYSpinBox->value() );
     cp.segmentOffsetMm = QPointF( ui->segOffsetXSpinBox->value(), ui->segOffsetYSpinBox->value() );
-    cp.deRes = ui->deResSpinBox->value();
     cp.raSplit = ui->raNumSpinBox->value();
     cp.inv = ui->invCheckBox->isChecked();
     cp.raRepeatCount = ui->raCountSpinBox->value();
