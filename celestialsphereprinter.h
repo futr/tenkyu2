@@ -111,7 +111,7 @@ public:
     double capDecSouth       = -70;
     QColor bgColor        = QColor( Qt::white );
     QColor starColor      = QColor( Qt::blue );
-    QColor consteColor    = QColor( Qt::red );
+    QColor consteColor    = QColor( 0xFF, 0x8C, 0x00 );
     QColor messierColor   = QColor( 0x94, 0x00, 0xd3 );
     QColor obsPointColor  = QColor( Qt::darkGreen );
     QColor infoStrColor   = QColor( Qt::black );

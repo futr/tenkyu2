@@ -39,18 +39,18 @@
         <translation>%1/20 %2時</translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="661"/>
+        <location filename="celestialsphereprinter.cpp" line="663"/>
         <source>RA %1° to %2°, Dec %3° to %4°</source>
         <translation>赤経 %1° から %2°, 赤緯 %3° から %4°</translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="906"/>
         <location filename="celestialsphereprinter.cpp" line="908"/>
+        <location filename="celestialsphereprinter.cpp" line="910"/>
         <source>0h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="celestialsphereprinter.cpp" line="919"/>
+        <location filename="celestialsphereprinter.cpp" line="921"/>
         <source>Dec %1° to %2°</source>
         <translation>赤緯 %1° から %2°</translation>
     </message>
@@ -425,7 +425,7 @@
     </message>
     <message>
         <location filename="widget.ui" line="1073"/>
-        <location filename="widget.cpp" line="181"/>
+        <location filename="widget.cpp" line="185"/>
         <source>About</source>
         <translation>このソフトについて</translation>
     </message>
@@ -469,12 +469,22 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="200"/>
+        <location filename="widget.cpp" line="163"/>
+        <source>Completed</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="163"/>
+        <source>Output to PDF is completed</source>
+        <translation>PDFへの出力が完了しました</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="206"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="200"/>
+        <location filename="widget.cpp" line="206"/>
         <source>Failed to acquire location : %1
 
 You may need to configure your OS to acquire location information.</source>

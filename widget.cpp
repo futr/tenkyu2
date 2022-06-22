@@ -159,6 +159,10 @@ void Widget::startPrinting()
     cp.startPrinting( fileName );
 
     setProcessing( false );
+
+    QMessageBox::information( this, tr( "Completed" ), tr( "Output to PDF is completed" ) );
+
+    pageProcessed( 0, 1 );
 }
 
 void Widget::pageProcessed(int i, int max)
@@ -187,6 +191,8 @@ void Widget::acquireLocation()
 {
     // Acquire location information
     if ( !posSource ) {
+        // qDebug() << QGeoPositionInfoSource::availableSources();
+
         posSource = QGeoPositionInfoSource::createDefaultSource( this );
 
         if ( posSource ) {
@@ -196,7 +202,7 @@ void Widget::acquireLocation()
                     ui->longiSpinBox->setValue( update.coordinate().longitude() );
                 }
             } );
-            connect( posSource, qOverload<QGeoPositionInfoSource::Error>( &QGeoPositionInfoSource::error ), this, [this]( QGeoPositionInfoSource::Error error ) {
+            connect( posSource, qOverload<QGeoPositionInfoSource::Error>( &QGeoPositionInfoSource::errorOccurred ), this, [this]( QGeoPositionInfoSource::Error error ) {
                 QMessageBox::warning( this, tr( "Failed" ), tr( "Failed to acquire location : %1\n\nYou may need to configure your OS to acquire location information." ).arg( error ) );
             } );
         }

@@ -60,7 +60,7 @@ bool StarMap::openDir(QString dirName)
     if ( !hip100File.open( QIODevice::ReadOnly | QIODevice::Text ) ) return false;
 
     s.setDevice( &hip100File );
-    s.setCodec( "UTF-8" );
+    s.setEncoding( QStringConverter::Utf8 );
     while ( !s.atEnd() ) {
         QStringList lineData = getLineData( s.readLine() );
         auto star = readStarDataLine( lineData );
@@ -86,7 +86,7 @@ bool StarMap::openDir(QString dirName)
     }
 
     s.setDevice( &consteNameFile );
-    s.setCodec( "UTF-8" );
+    s.setEncoding( QStringConverter::Utf8 );
     while ( !s.atEnd() ) {
         QStringList lineData = getLineData( s.readLine() );
         auto conste = readConsteNameLine( lineData );
@@ -108,7 +108,7 @@ bool StarMap::openDir(QString dirName)
     if ( !messierFile.open( QIODevice::ReadOnly | QIODevice::Text ) ) return false;
 
     s.setDevice( &messierFile );
-    s.setCodec( "UTF-8" );
+    s.setEncoding( QStringConverter::Utf8 );
     while ( !s.atEnd() ) {
         QStringList lineData = getLineData( s.readLine() );
         auto messier = readMessierDataLine( lineData );
