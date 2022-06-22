@@ -5,7 +5,7 @@
 鏡像天球儀は「Astro Commons」さんから取得させていただいたデータを使用して作図しています。
 
 ## 「Astro Commons」さんのウェブサイト
-http://astronomy.webcrow.jp/
+http://astro.starfree.jp/commons/
 
 ## 星座データ
 ### 使用ファイル
